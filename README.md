@@ -20,25 +20,45 @@ Apply data visualization techniques to identify the patterns of the data.
 # CODE
 
 import pandas as pd
+
 import numpy as np
+
 import matplotlib.pyplot as plt
+
 import seaborn as sbn
+
 df=pd.read_csv("Superstore.csv",encoding = 'windows-1252')
+
 df.head()
+
 df.info()
+
 df.isnull().sum()
+
 sbn.countplot(x=df['Segment'],data=df)
+
 plt.title("Number of Sales in Segment")
+
 sbn.barplot(x=df['City'],y=df['Profit'])
+
 plt.title("Number of Profit in Cities")
+
 sbn.countplot(x=df['Ship Mode'],data=df)
+
 plt.title("Number of profits in Ship Mode")
+
 sbn.boxplot(x=df['Region'], y=df['Sales'])
+
 plt.title("Sales of Product based on Region")
+
 sbn.scatterplot(x=df['Sales'], y=df['Profit'])
+
 sbn.scatterplot(x=df['Sales'],y=df['Profit'],hue=df['Segment'])
+
 sbn.scatterplot(x=df['Sales'],y=df['City'],hue=df['Profit'])
+
 sbn.scatterplot(x=df['Sales'], y=df['Profit'])
+
 sbn.scatterplot(x=df['Sales'],y=df['Profit'],hue=df['Segment'])
 
 # OUPUT
